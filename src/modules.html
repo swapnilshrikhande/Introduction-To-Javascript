@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Module Pattern</title>
+  </head>
+  <body>
+  </body>
+   <script>
+
+   //simple app
+   var app = {
+      privateVariable : 2
+   };
+
+
+   //Module app
+   var MODULE = (function () {
+
+         var app  = {};
+
+         //private variables
+         var privateVariable = 1;
+         function privateMethod() {
+         }	
+		
+		 //public method
+         app.moduleProperty = 1;
+         app.moduleMethod = function () {
+             console.log("Public method moduleMethod()");
+         };
+
+         app.getPrivateVariable = function(){
+             return privateVariable;
+         }
+
+         return app;
+
+    }());
+
+    MODULE.moduleMethod();
+    console.log ( MODULE.getPrivateVariable() );
+
+   </script>
+</html>

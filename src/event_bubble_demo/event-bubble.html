@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Event Demo</title>
+		<script src="./jquery-1.11.3.js"></script>
+	</head>
+	<style type="text/css">
+		.target{
+			border: 5px groove black;
+			padding : 50px;
+		}
+
+	</style>
+
+		<body>
+
+		<div class="target largest">
+
+			<div class="target large">
+
+				<div class="target medium">
+
+					<div class="target small">
+
+						<div class="target tiny">
+
+							<div class="target micro">
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<script type="text/javascript">
+
+			var en = en || {};
+
+			en.getRandomColor = function(){
+				var letters = '0123456789ABCDEF'.split('');
+			    var color = '#';
+			    for (var i = 0; i < 6; i++ ) {
+					color += letters[Math.floor(Math.random() * 16)];
+			    }
+				return color;
+			}
+
+
+			var clickHandler = function(event){
+
+				var shouldWeBubble = true;
+				$(this).css("background-color",en.getRandomColor());
+
+				return shouldWeBubble;
+			};
+
+
+			var initialize = function(){
+					//will returns an Array of
+					$(".target").on("click",clickHandler);
+			};
+
+
+			$(document).ready( initialize );
+
+
+		</script>
+
+	</body>
+</html>

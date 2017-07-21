@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Closure Scope</title>
+  </head>
+  <body>
+  </body>
+
+  <script>
+
+  var arrayOfFunctions = [];
+
+  //with closure
+  function aFunction(){
+        var index=0;
+
+        for( index=0 ; index<5 ; index++ ){
+
+            var functionVar = function(){
+                //this function can access index because of closure scope
+                console.log("index=",index);
+            };
+
+            arrayOfFunctions.push(functionVar);
+        }
+   }
+
+   aFunction();
+   arrayOfFunctions[0]();
+   arrayOfFunctions[1]();
+   arrayOfFunctions[2]();
+
+  </script>
+
+</html>

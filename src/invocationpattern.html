@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    console.log("Function Invocation Pattern");
+    var functionInvocation = function(){
+        console.log(this);
+        this.avariable =
+        window.avariable
+    };
+    functionInvocation();
+
+    console.log("Constructor Instance Pattern");
+    var Car = function(){
+        console.log(this);
+    };
+    var carObject = new Car();
+
+
+    console.log("Method Invocation Pattern");
+    var student = {"object":"student"};
+    student.method = function(){
+        console.log(this);
+    };
+    student.method();
+
+
+    console.log("Apply Invocation Pattern");
+    var anotherStudent = {"object":"anotherStudent"};
+    student.method.apply(anotherStudent,[]);
+
+  </script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+
+    function askherout(girl){
+        if( girl.says() == 'No' ){
+            throw {"name":"Nope","message":""};
+        }
+    };
+
+    try {
+        var girl = {};
+        girl.says = function(){
+            return 'No';
+        };
+
+        askherout(girl);
+    } catch (exceptionObject) {
+        console.log('Oops :',exceptionObject);
+        console.log('Name :',exceptionObject.name);
+        console.log('Message :',exceptionObject.message);
+    } finally {
+        console.log("Party !!!");
+    }
+
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+
+  function parent(){
+      var localVariable;
+      
+      //closure
+      var child = function(){
+          //this access is provided due to closure
+          console.log(localVariable);
+      };
+  }
+
+  </script>
+</html>
